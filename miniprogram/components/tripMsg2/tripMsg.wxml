@@ -1,0 +1,55 @@
+<!--components/tripMsg/tripMsg.wxml-->
+<wxs src="../../utils/util.wxs" module="util" />
+<view bindtap='bindGoDetail' class='msg-card' data-courseObj='{{courseObj}}'>
+<!-- 
+  <view class='headImgName'>
+      <image class='img' src='{{courseObj.User.avatar_url}}'></image>
+      <text class='name'>{{courseObj.User.nick_name}}</text>
+  </view> -->
+  <view class="pincheInfo">
+    <view class='item-wrapper'>
+        <i class="iconfont icon-shijianrili" style="font-size:24rpx;"></i>
+        <view class='datetime'>出发时间：{{util.formatTime(courseObj.start_time,'M-D h:m')}}</view>
+        <view style='position:absolute;right:50rpx;font-size:24rpx;'>
+          <i class="iconfont icon-juli" style="font-size:24rpx;"></i>
+        </view>
+    </view>
+
+    <view class='main-info'>
+      <view class='address-wrapper'>
+          <view class='address-line'>
+            <i class="iconfont icon-qidian" style="font-size:30rpx;color:#00cec9"></i>
+            <view class='line'></view>
+            <i class="iconfont icon-zhongdian" style="font-size:30rpx;color:#fdcb6e"></i>
+          </view>
+          <view style='margin-left:10rpx'>
+            <view class='start-address'>
+              <view class='address-title'>{{courseObj.start_name}}</view>
+              <view class='address-detail'>{{courseObj.start_address}}</view>
+            </view>
+            <view class='end-address'>
+              <view class='address-title'>{{courseObj.end_name}}</view>
+              <view class='address-detail'>{{courseObj.end_address}}</view>
+            </view>
+          </view>        
+      </view>
+
+      <view class='price-num'>
+          <!-- <view>
+            <label class='price-info'>{{courseObj.price}}</label>
+            <label wx:if="{{showType == 0}}" style='font-size: 24rpx; color:#595959;padding-left:10rpx;'>元</label>
+            <label style='font-size: 24rpx; color:#595959;padding-left:10rpx;' wx:else>元/人</label>  
+          </view> -->
+          <view wx:if="{{showType == 0}}" >
+            <label class='num-info'>{{courseObj.personNum}}</label>
+            <label style='font-size: 24rpx; color:#595959;padding-left:10rpx;'>位乘客</label>
+          </view>
+          <view wx:else>
+            <label style='font-size: 24rpx; color:#595959;padding-left:10rpx;'>余座</label>
+            <label class='num-info'>{{courseObj.personNum}}</label>
+          </view>
+      </view>
+      
+    </view>
+  </view>
+</view>

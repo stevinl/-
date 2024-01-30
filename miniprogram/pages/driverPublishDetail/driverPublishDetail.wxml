@@ -1,0 +1,114 @@
+<!--pages/driverPublishDetail/driverPublishDetail.wxml-->
+<view class='container' style=''>
+  <map id="myMap" latitude="{{latitude}}" longitude="{{longitude}}" subkey="DUZBZ-HGJCW-VT7R7-OCVXO-YFYCK-ASFCL"
+    style="width:{{mapWidth}}rpx;height:{{mapHeight}}rpx" scale="{{scale}}" markers="{{markers}}"
+    polyline="{{polyline}}" wx:if="{{isShow}}" layer-style="2">
+  </map>
+
+  <!-- 预约按钮 -->
+  <view class='make-btn'>
+    <view class='left-btn'>
+      <view class='back' bindtap='bindGoBack'>
+        <image src='../../images/icon/back.png'></image>
+      </view>
+      <view class='home' bindtap='bindGoHome'>
+        <image src='../../images/icon/home3.png'></image>
+      </view>
+    </view>
+    <view class='tel' bindtap='bindMakePhoneCall'>
+      <image src='../../images/icon/tel3.png'></image>
+      <text class='text'>马上预约</text>
+    </view>
+    <button class='share' hover-class="other-button-hover" open-type="share">
+      <image src='../../images/icon/share3.png'></image>
+    </button>
+  </view>
+
+
+
+</view>
+
+
+<view>
+
+  <view class="cu-list menu ">
+    <view class='top-view'>
+      <view class='user-info'>
+        <image class='img' src='{{courseInfo.User.avatar_url}}'></image>
+        <text class='name'>{{courseInfo.User.nick_name}}</text>
+      </view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-favorfill text-yellow"></text>
+        <text class="cuIcon-favorfill text-yellow"></text>
+        <text class="cuIcon-favorfill text-yellow"></text>
+        <text class="cuIcon-favorfill text-yellow"></text>
+        <text class="cuIcon-favorfill"></text>
+      </view>
+    </view>
+
+
+    <view class="cu-item ">
+      <view class="content">
+        <text class="cuIcon-warn text-green"></text>
+        <text class="text-grey">出行时间</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">{{courseInfo.start_time}}</text>
+      </view>
+    </view>
+
+    <view class="cu-item ">
+      <view class="content">
+        <text class="cuIcon-warn text-green"></text>
+        <text class="text-grey">起点</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">{{courseInfo.start_name}}</text>
+      </view>
+    </view>
+
+    <view class="cu-item ">
+      <view class="content">
+        <text class="cuIcon-warn text-green"></text>
+        <text class="text-grey">目的地</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">{{courseInfo.end_name}}</text>
+      </view>
+    </view>
+
+    <view class="cu-item ">
+      <view class="content">
+        <text class="cuIcon-warn text-green"></text>
+        <text class="text-grey">剩余座位</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">{{courseInfo.personNum}}</text>
+      </view>
+    </view>
+
+    <view class="cu-item ">
+      <view class="content">
+        <text class="cuIcon-warn text-green"></text>
+        <text class="text-grey">费用/人</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">{{courseInfo.price}}</text>
+      </view>
+    </view>
+
+
+    <view class="cu-item ">
+      <view class="content">
+        <text class="cuIcon-warn text-green"></text>
+        <text class="text-grey">备注</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">{{courseInfo.note}}</text>
+      </view>
+    </view>
+  </view>
+
+
+
+</view>

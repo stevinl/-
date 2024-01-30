@@ -1,0 +1,157 @@
+{
+  "setting": {
+    "compileHotReLoad": true
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/about/home/home",
+          "pathName": "pages/about/home/home",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/explore/explore",
+          "pathName": "pages/explore/explore",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish/publish",
+          "pathName": "pages/publish/publish",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/driverPublishHistory/driverPublishHistory",
+          "pathName": "pages/driverPublishHistory/driverPublishHistory",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/driverPublish/driverPublish",
+          "pathName": "pages/driverPublish/driverPublish",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/search/search",
+          "pathName": "pages/search/search",
+          "query": "showType=1",
+          "scene": null
+        },
+        {
+          "name": "pages/other/bbs/bbs",
+          "pathName": "pages/other/bbs/bbs",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/capsule-bar/index",
+          "pathName": "pages/capsule-bar/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/personal",
+          "pathName": "pages/personal/personal",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/other/driverAuth/driverAuth",
+          "pathName": "pages/other/driverAuth/driverAuth",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/personal",
+          "pathName": "pages/personal/personal",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/other/bbs/bbs",
+          "pathName": "pages/other/bbs/bbs",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/other/bbs/bbsPublish",
+          "pathName": "pages/other/bbs/bbsPublish",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/other/bbs/bbsDetail",
+          "pathName": "pages/other/bbs/bbsDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/other/driverAuth/driverAuth",
+          "pathName": "pages/other/driverAuth/driverAuth",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/other/myPublish/myPublish",
+          "pathName": "pages/other/myPublish/myPublish",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/other/myPublish/grade",
+          "pathName": "pages/other/myPublish/grade",
+          "query": "item=%7B%22id%22%3A3%2C%22phone%22%3A%22123456%22%2C%22price%22%3A%22156%22%2C%22personNum%22%3A%225%22%2C%22start_time%22%3A%222021-03-28%2000%3A01%22%2C%22note%22%3A%221231%22%2C%22start_name%22%3A%22%E9%87%91%E5%B9%B3%E5%8C%BA%E8%89%BA%E9%83%BD%E5%A4%A7%E5%89%A7%E9%99%A2(%E9%87%91%E7%A0%82%E8%B7%AF%E5%BA%97)%22%2C%22start_address%22%3A%22%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%B1%95%E5%A4%B4%E5%B8%82%E9%87%91%E5%B9%B3%E5%8C%BA%E4%B8%9C%E5%8E%A6%E5%8D%97%E8%B7%AF%22%2C%22start_city%22%3A%22%E6%B1%95%E5%A4%B4%E5%B8%82%22%2C%22start_district%22%3A%22%E9%87%91%E5%B9%B3%E5%8C%BA%22%2C%22start_nation%22%3A%22%E4%B8%AD%E5%9B%BD%22%2C%22start_province%22%3A%22%E5%B9%BF%E4%B8%9C%E7%9C%81%22%2C%22start_street%22%3A%22%E4%B8%9C%E5%8E%A6%E5%8D%97%E8%B7%AF%22%2C%22start_streetnumber%22%3A%22%E4%B8%9C%E5%8E%A6%E5%8D%97%E8%B7%AF%22%2C%22start_latitude%22%3A23.36525%2C%22start_longitude%22%3A116.705399%2C%22end_latitude%22%3A23.366581%2C%22end_longitude%22%3A116.705292%2C%22end_name%22%3A%22%E5%B0%8F%E9%BE%99%E5%9D%8E%E8%80%81%E7%81%AB%E9%94%85(%E4%B8%9C%E5%8E%A6%E8%B7%AF%E5%BA%97)%22%2C%22end_address%22%3A%22%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%B1%95%E5%A4%B4%E5%B8%82%E9%87%91%E5%B9%B3%E5%8C%BA%E4%B8%9C%E5%8E%A6%E8%B7%AF62%E5%8F%B7%E6%B5%B7%E9%9C%B8%E7%8E%8B%22%2C%22end_city%22%3A%22%E6%B1%95%E5%A4%B4%E5%B8%82%22%2C%22end_district%22%3A%22%E9%87%91%E5%B9%B3%E5%8C%BA%22%2C%22end_nation%22%3A%22%E4%B8%AD%E5%9B%BD%22%2C%22end_province%22%3A%22%E5%B9%BF%E4%B8%9C%E7%9C%81%22%2C%22end_street%22%3A%22%E4%B8%9C%E5%8E%A6%E5%8D%97%E8%B7%AF%22%2C%22end_streetnumber%22%3A%22%E4%B8%9C%E5%8E%A6%E5%8D%97%E8%B7%AF%22%2C%22status%22%3Anull%2C%22created_at%22%3A%222021-03-24T13%3A40%3A50.000Z%22%2C%22updated_at%22%3A%222021-03-24T13%3A40%3A50.000Z%22%2C%22deleted_at%22%3Anull%2C%22user_id%22%3A1%7D]",
+          "scene": null
+        },
+        {
+          "name": "pages/driverPublishConfirm/confirm",
+          "pathName": "pages/driverPublishConfirm/confirm",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/other/myPublish/myparticipate",
+          "pathName": "pages/other/myPublish/myparticipate",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/notification/notification",
+          "pathName": "pages/notification/notification",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/other/safe/safe",
+          "pathName": "pages/other/safe/safe",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/other/safe/contactPeople/contactPeople",
+          "pathName": "pages/other/safe/contactPeople/contactPeople",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/search/search",
+          "pathName": "pages/search/search",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "projectname": "CarpoolClient"
+}

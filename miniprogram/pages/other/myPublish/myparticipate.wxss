@@ -1,0 +1,11 @@
+/* miniprogram/pages/other/myPublish/myparticipate.wxss */
+.card {
+
+  margin-top: 10rpx;
+  height: 340rpx;
+  overflow: hidden;
+}
+
+.content-item {
+  margin-top: 25rpx;
+}

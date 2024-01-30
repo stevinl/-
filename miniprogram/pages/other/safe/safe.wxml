@@ -1,0 +1,33 @@
+<!--miniprogram/pages/other/safe/safe.wxml-->
+<view >
+  <!-- 安全评分 -->
+  <view class="safe">
+    <van-circle value="{{ safe_value }}" color="{{ gradientColor }}" text="{{safe_value}}%"/>
+  </view>
+
+  <!-- 列表 -->
+  <view class="cu-list menu sm-border {{menuCard?'card-menu margin-top':''}}">
+    <view class="cu-item arrow" bindtap="onswtich">
+      <view class="content">
+        <text class="cuIcon-friend text-green"></text>
+        <text class="text-grey">紧急联系人</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">已设置</text>
+      </view>
+    </view>
+
+    <view class="cu-item arrow" bindtap="onswtich2">
+      <view class="content">
+        <text class="cuIcon-profile text-black"></text>
+        <text class="text-grey">手机认证</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">已设置</text>
+      </view>
+    </view>
+
+  </view>
+
+
+</view>

@@ -1,0 +1,184 @@
+<!--pages/other/bbs/bbsDetail.wxml-->
+<wxs module="util" src='../../../utils/util.wxs'></wxs>
+<scroll-view scroll-y="true" class="container">
+  <!-- <view class="blog-card">
+    <view class="blog">
+      <view class="blog-title">
+        <image class="blog-portrait" src="{{bbsDetail.User.avatar_url}}" />
+        <view class="blog-box">
+          <view class="blog-nickName">{{bbsDetail.User.nick_name}}</view>
+          <view class="blog-time">{{util.getDateDiff(bbsDetail.created_at)}}</view>
+        </view>
+      </view>
+      <view class="blog-content">{{bbsDetail.content}}</view>
+      <view class="blog-img">
+        <block wx:for="{{blog.img}}" wx:key="index">
+          <image class="img" src="{{item}}" mode="aspectFill" catch:tap="onPreviewImage" data-imgsrc="{{item}}"
+            data-imgs="{{blog.img}}" />
+        </block>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="tab">
+    <view class="tab-item">评论列表</view>
+  </view> -->
+
+  <view class="cu-card dynamic no-card" >
+    <view class="cu-item shadow">
+
+
+      <view class="cu-list menu-avatar">
+        <view class="cu-item">
+          <view class="cu-avatar round lg" style="background-image:url({{bbsDetail.User.avatar_url}});"></view>
+          <view class="content flex-sub">
+            <view>{{bbsDetail.User.nick_name}}</view>
+            <view class="text-gray text-sm flex justify-between">
+              {{util.getDateDiff(bbsDetail.created_at)}}
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="text-content">
+        {{bbsDetail.content}}
+      </view>
+      <!-- <view class="grid flex-sub padding-lr {{isCard?'col-3 grid-square':'col-1'}}">
+        <view class="bg-img {{isCard?'':'only-img'}}"
+          style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"
+          wx:for="{{isCard?9:1}}" wx:key="{{index}}">
+        </view>
+      </view> -->
+      <view class="text-gray text-sm text-right padding">
+          <text class="cuIcon-attentionfill margin-lr-xs"></text>10 
+          <block wx:if="{{islikebythisuser}}">
+            <text class="cuIcon-appreciatefill margin-lr-xs text-green"  bindtap="DisLike"></text> {{bbs_like_count}}
+          </block>
+          <block wx:else>
+            <text class="cuIcon-appreciatefill margin-lr-xs "  bindtap="GiveLike"></text> {{bbsDetail.like_count}}
+          </block>
+
+          <text class="cuIcon-messagefill margin-lr-xs"></text>{{commentListLength}}
+
+
+      </view>
+
+      <!-- 评论 -->
+
+        <view class="cu-list menu-avatar comment solids-top" >
+          <block wx:for="{{commentList}}" wx:key="id">
+          <view class="cu-item" data-item="{{item}}">
+            <view class="cu-avatar round"
+              style="background-image:url({{item.User.avatar_url}});"></view>
+            <view class="content">
+              <view class="text-grey">{{item.User.nick_name}}</view>
+              <!-- <view class="text-gray text-content text-df">
+                {{item.content}}
+              </view> -->
+              <view class="bg-grey padding-sm radius margin-top-sm  text-sm">
+              <view class="flex">
+                <!-- <view>凯尔：</view> -->
+                <view class="flex-sub">{{item.content}}</view>
+              </view>
+            </view>
+              <view class="margin-top-sm flex justify-between">
+                <view class="text-gray text-df">{{util.getDateDiff(item.created_at)}}</view>
+                <!-- 评论图标
+                <view>
+                  <text class="cuIcon-appreciatefill text-red"></text>
+                  <text class="cuIcon-messagefill text-gray margin-left-sm"></text>
+                </view> -->
+              </view>
+            </view>
+          </view>
+          <!-- 评论 -->
+          <!-- <view class="cu-item">
+          <view class="cu-avatar round"
+            style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+          <view class="content">
+            <view class="text-grey">凯尔</view>
+            <view class="text-gray text-content text-df">
+              妹妹，如果不是为了飞翔，我们要这翅膀有什么用?
+            </view>
+            <view class="bg-grey padding-sm radius margin-top-sm  text-sm">
+              <view class="flex">
+                <view>莫甘娜：</view>
+                <view class="flex-sub">如果不能立足于大地，要这双脚又有何用?</view>
+              </view>
+            </view>
+            <view class="margin-top-sm flex justify-between">
+              <view class="text-gray text-df">2018年12月4日</view>
+              <view>
+                <text class="cuIcon-appreciate text-gray"></text>
+                <text class="cuIcon-messagefill text-gray margin-left-sm"></text>
+              </view>
+            </view>
+          </view>
+        </view> -->
+          <!-- 评论 -->
+
+
+
+        </block>
+        </view>
+
+
+
+    </view>
+
+    <view class="no-comment" hidden="{{hasComment}}">
+      还没有评论，快抢占沙发吧~
+    </view>
+  </view>
+
+
+  <!-- <view class="comment-list">
+
+    <block wx:for="{{commentList}}" wx:key="id">
+      <view class="comment">
+        <view class="comment-content">
+          <image class="comment-portrait" src="{{item.avatarUrl}}"></image>
+          <text class="comment-nickname">{{item.nickName}}</text>
+          <view class="comment-text">{{item.content}}</view>
+          <view class="comment-time">{{item.createTime}}</view>
+        </view>
+      </view>
+    </block>
+
+  </view>
+
+  <view class="no-comment" hidden="{{isComment}}">
+    还没有评论，快抢占沙发吧~
+  </view> -->
+</scroll-view>
+
+<view class="blog-ctrl">
+  <view class="ctrl">
+    <view class="ctrl-item" bind:tap="onComment">
+      <i class="iconfont icon-u icon"></i>
+      <text>{{commentLength}}</text>
+      <text>评论</text>
+    </view>
+    <view class="ctrl-item share">
+      <!-- 
+      分享功能只有buttton标签才支持，并设置open-type="share"。
+      data-blogid、 data-blog 为传过去的值
+      hover-class 为鼠标移入的样式类
+    -->
+      <button open-type="share" data-blogid="{{blogId}}" data-blog="{{blog}}" class="share-btn"
+        hover-class="share-hover">
+        <i class="iconfont icon-fenxiang icon"></i>
+        <text>分享</text>
+      </button>
+    </view>
+  </view>
+
+
+  <bottom-modal modalShow="{{modalShow}}">
+    <form slot="modal-content" bind:submit="onSend">
+      <textarea name="content" focus="{{isFocus}}" class="comment-content" placeholder="写评论" value="{{content}}"
+        fixed="true"></textarea>
+      <button class="send" form-type="submit">发送</button>
+    </form>
+  </bottom-modal>
+</view>

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "l-capsule-bar":"/dist/capsule-bar/index",
+    "van-popup": "@vant/weapp/popup/index"
+  },
+  "navigationStyle":"custom",
+  "navigationBarTextStyle":"white"
+}

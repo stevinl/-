@@ -1,0 +1,4 @@
+
+<view>
+  <!-- <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">点击获取手机</button> -->
+</view>

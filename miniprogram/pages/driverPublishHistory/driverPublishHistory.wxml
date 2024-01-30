@@ -1,0 +1,27 @@
+<!--pages/driverPublishHistory/driverPublishHistory.wxml-->
+<view class="container">
+  <view class="list-view">
+    <view class="item-view">
+      
+      <view class="info">
+        <view class="delete-btn" data-idx="{{}}">
+          <image src="../../images/delete.png"></image>
+        </view>
+      </view>
+
+      <view class="item">
+        
+      </view>
+    
+    </view>
+
+
+  </view>
+
+  <!-- 新增拼车信息 -->
+  <view class='submit-btn'>
+    <navigator class='navigator' url="/pages/driverPublish/driverPublish">
+        新增出行信息
+    </navigator>
+  </view>
+</view>

@@ -1,0 +1,15 @@
+{
+  "name": "carpoolclient",
+  "version": "1.0.0",
+  "description": "BigProject",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dalaoming0223",
+  "license": "ISC",
+  "dependencies": {
+    "@vant/weapp": "^1.6.1",
+    "js-base64": "^3.6.0"
+  }
+}

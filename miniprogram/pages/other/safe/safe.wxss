@@ -1,0 +1,6 @@
+/* miniprogram/pages/other/safe/safe.wxss */
+.safe{
+  text-align: center;
+  padding: 100rpx 0;
+  background-color: beige;
+}

@@ -1,0 +1,27 @@
+<!--pages/other/myPublish/myPublish.wxml-->
+<view style="margin: 16px">我发布的行程</view>
+<view class="card" wx:for="{{dataList}}" wx:key="index" wx:for-item="item">
+  <view bindtap="doGrade" data-item="{{item}}">
+    <i-card full title="拼车" extra="" thumb="">
+    
+    <view slot="content">
+      <!-- <view class="cu-tag bg-red light">标签</view> -->
+      <view class="">
+        <i class="iconfont icon-shijianrili" style="font-size:24rpx;"></i> {{item.start_time}}
+      </view>
+      <view class="content-item">
+        <i class="iconfont icon-qidian" style="font-size:30rpx;color:#00cec9"></i> {{item.start_name}}
+      </view>
+      <view class="content-item">
+        <i class="iconfont icon-zhongdian" style="font-size:30rpx;color:#fdcb6e"></i><P> {{item.end_name}}</P>
+      </view>
+    </view>
+    <view slot="footer">
+      <view class="cu-tag bg-{{item.finish_status==0 ? 'red' : 'green'}} light">{{item.finish_status==0 ? '已完成' : '进行中'}}</view>
+      <view class="cu-tag round bg-orange ">开放 {{item.personNum}}人</view>
+      <view class="cu-tag round bg-purple ">已拼 {{item.driverPublishParticipators.length}}人</view>
+    </view>
+</i-card>
+  </view>
+  
+</view>

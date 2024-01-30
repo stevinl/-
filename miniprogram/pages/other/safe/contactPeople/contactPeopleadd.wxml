@@ -1,0 +1,29 @@
+<!--miniprogram/pages/other/safe/contactPeople/contactPeopleadd.wxml-->
+<form bindsubmit="submitForm">
+  <view class="cu-form-group">
+    <text class="cuIcon-phone text-orange "></text>
+		<input placeholder=" 输入联系人电话号码" name="contact_num"></input>
+		<view class="cu-capsule radius">
+			<view class="cu-tag bg-blue">
+				+86
+			</view>
+			<view class="cu-tag line-blue">
+				中国大陆
+			</view>
+		</view>
+  </view>
+  
+  <view class="cu-form-group">
+    <text class="cuIcon-friendadd text-purple "></text>
+		<input placeholder=" 输入联系人名字（选填）" name="contact_name"></input>
+  </view>
+  <view class="padding flex flex-direction">
+    <button form-type="submit" class="cu-btn bg-white margin-tb-sm lg">保存</button>
+  </view>
+  <view>
+    
+  </view>
+  
+</form>
+
+

@@ -1,0 +1,35 @@
+/* pages/driverPublish/driverPublish.wxss */
+page {
+  height: 100%;
+}
+
+map {
+  width: 100%;
+  height: 55%;
+}
+
+.input-wrapper {
+  display: flex;
+}
+
+.point-input {
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+.button-publish {
+  position: fixed;
+  width: 85%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 35rpx;
+  /* line-height: 35rpx; */
+}
+
+.textarea-node {
+  flex: 1;
+  margin-left: 70rpx;
+  margin-top: 20rpx;
+  padding-right: 30rpx;
+}

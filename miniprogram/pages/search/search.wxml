@@ -1,0 +1,38 @@
+<!--pages/search/search.wxml-->
+<!-- <view id='top-bar'>
+    <view id='get-location' bindtap='bindGetLocation'>
+      <view wx:if="{{locationInfo === ''}}">
+        <i class="iconfont icon-dingwei" style="fontsize:20rpx;"></i>定位
+      </view>
+      <view wx:else>
+        <i class="iconfont icon-dingwei" style="fontsize:20rpx;"></i> {{locationInfo}}
+      </view>
+      
+    </view>
+    <view id='top-bar-right'>
+      <view bindtap='goSearchByLocPage' id='search-by-location'>
+        <i class="iconfont icon-sousuo-copy" style="fontsize:20rpx;"></i>
+        查询行程
+      </view>
+    </view>
+</view> -->
+
+<van-tabs bind:click="onClick">
+  <van-tab title="乘客发布">
+  </van-tab>
+  <van-tab title="司机发布">
+  </van-tab>
+</van-tabs>
+<van-search
+  value="{{ value }}"
+  placeholder="请输入搜索关键词"
+  show-action
+  bind:search="onSearch"
+  bind:cancel="onCancel"
+  bind:change="onChange"
+/>
+<view wx:if="{{msgList.length > 0}}">
+  <tripmsg id='courseCard' wx:for="{{msgList}}" wx:for-index="idx" wx:for-item="item" wx:key='id'showType="{{showType}}" courseObj='{{item}}'></tripmsg>
+</view>
+
+

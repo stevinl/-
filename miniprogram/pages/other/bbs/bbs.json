@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "content-card": "../../../components/content-card/index",
+    "content-title": "../../../components/content-title/index",
+    "l-sticky": "../../../dist/sticky/index",
+    "l-sticky-item":"/dist/sticky-item/index",
+    "search-bar": "/dist/search-bar/index",
+    "l-segment": "/dist/segment/index",
+    "l-segment-item": "/dist/segment-item/index",
+    "l-card": "/dist/card/index",
+    "van-search": "@vant/weapp/search/index"
+  },
+  "enablePullDownRefresh": true
+}

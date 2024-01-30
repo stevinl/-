@@ -1,0 +1,102 @@
+<!--pages/passengerPublish/passengerPublish.wxml-->
+<!--pages/driverPublish/driverPublish.wxml-->
+<form bindsubmit="submitForm">
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item ">
+      <view class="content input-wrapper" >
+        <!-- <text class="cuIcon-location text-green"></text> -->
+        <!-- <text class="text-grey">GitHub</text> -->
+        <!-- <label class='start-icon'>起</label> -->
+        <input bindfocus='bindSelectStart' class="point-input" id='start' name="start" placeholder='点击选择起点' value='{{startAddressInfo.name}}'/>
+      </view>
+    </view>
+    <view class="cu-item ">
+      <view class="content input-wrapper" >
+        <!-- <text class="cuIcon-roundcheck text-red"></text> -->
+        <!-- <text class="text-grey">GitHub</text> -->
+        <!-- <label class='end-icon'>终</label> -->
+        <input bindfocus='bindSelectEnd' class="point-input" id='end' name="end" placeholder='点击选择终点' value='{{endAddressInfo.name}}'/>
+      </view>
+    </view>
+  </view>
+
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item ">
+      <view class="content input-wrapper" >
+        <text class="cuIcon-peoplelist text-blue"></text>
+        <!-- <label class='font'>余座：</label> -->
+        <input class="point-input" placeholder='余座'/>
+        <picker name="surplusSeat" class="" bindchange="bindNumChange" mode="selector" range="{{searRange}}"  value="{{index}}" bindcancel="">
+          <view wx:if="{{index==-1}}">
+            选择人数
+          </view>
+          <view wx:else>
+            {{searRange[index]}} 个
+          </view>
+        </picker>
+
+      </view>
+    </view>
+    <view class="cu-item ">
+      <view class="content input-wrapper" >
+        <text class="cuIcon-sponsor text-yellow"></text>
+        <input class="point-input" type='number' name='price' placeholder='价格/人'/>
+      </view>
+    </view>
+  </view>
+
+  <!-- 时间选择 -->
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item ">
+      <view class="content input-wrapper" >
+        <text class="cuIcon-sponsor text-orange"></text>
+        <input class="point-input" placeholder='时间选择'/>
+		    <picker name="time" mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="TimeChange">
+          <view class="picker" wx:if="{{time == ''}}">
+            请选择
+          </view>
+          <view class="picker" wx:else>
+            {{time}}
+          </view>
+		    </picker>
+      </view>
+    </view>
+
+    <view class="cu-item ">
+      <view class="content input-wrapper" >
+        <text class="cuIcon-sponsor text-purple"></text>
+        <input class="point-input" placeholder='日期选择'/>
+		    <picker name="date" mode="date" value="{{date}}" start="2020-10-01" end="" bindchange="DateChange">
+          <view class="picker" wx:if="{{date == ''}}">
+            请选择
+          </view>
+          <view class="picker" wx:else>
+            {{date}}
+          </view>
+		    </picker>
+      </view>
+    </view>
+  </view>
+
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item ">
+      <view class="content input-wrapper" >
+        <text class="cuIcon-sponsor text-yellow"></text>
+        <input class="point-input" type='number' name='phone' placeholder='联系方式'/>
+      </view>
+    </view>
+  </view>
+
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item ">
+      <view class="content input-wrapper" >
+        <!-- <text class="cuIcon-sponsor text-yellow "></text> -->
+        <textarea class="textarea-node" maxlength="-1" name="note" placeholder="备注信息"></textarea>
+      </view>  
+    </view>  
+  </view>
+
+
+
+  <button form-type="submit" class="cu-btn round lg bg-cyan button-publish">发布</button>
+</form>

@@ -1,0 +1,99 @@
+<!--pages/other/myPublish/grade.wxml-->
+<view class="cu-card case ">
+  <view class="cu-item shadow">
+
+    <tripmsg id='courseCard' showType="{{showType}}" courseObj='{{item}}'></tripmsg>
+
+    <view class="cu-bar bg-white solid-bottom margin-top">
+      <view class="action">
+        <text class="cuIcon-title text-orange "></text> 拼车人员  {{item.driverPublishParticipators.length}}/{{item.personNum}}
+      </view>
+    </view>
+
+    <block wx:if="{{item.driverPublishParticipators.length > 0}}">
+      <view class="cu-list menu-avatar">
+
+        <!-- <view class="cu-item"  wx:for="{{item.driverPublishParticipators}}"  wx:key="id" wx:for-item="detail">
+          <view class="cu-avatar round lg"
+            style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+          <view class="content flex-sub">
+            <view class="text-grey">{{detail.User.nick_name}}</view>
+            <view class="text-gray text-sm flex justify-between">
+              十天前
+              <view class="text-gray text-sm">
+                <text class="cuIcon-attentionfill margin-lr-xs"></text> 10
+                <text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
+                <text class="cuIcon-messagefill margin-lr-xs"></text> 30
+              </view>
+            </view>
+          </view>
+        </view> -->
+
+        <view class="cu-item "  wx:for="{{item.driverPublishParticipators}}"  wx:key="id" wx:for-item="detail">
+          <view class="cu-avatar radius lg"
+            style="background-image:url({{detail.User.avatar_url}});"></view>
+          <view class="content">
+            <view class="text-pink">
+              <text class="text-cut">{{detail.User.nick_name}}</text>
+            </view>
+            <view class="text-gray text-sm flex">
+              <text class="text-cut">凯尔，你被自己的光芒变的盲目！</text>
+            </view>
+          </view>
+          <view class="action">
+            <view class="text-grey text-xs">22:20</view>
+            <view class="cu-tag round bg-red sm">5</view>
+          </view>
+        </view>
+
+      </view>
+    </block>
+
+    <block wx:else>
+      <view class="cu-list menu-avatar" >
+        <view class="cu-item" style="justify-content:center">
+        暂无人员加入</view>
+      </view>
+
+    </block>
+
+    <view class="flex-sub text-center">
+      <view class="padding"><text class="text-black text-bold">人均</text></view>
+      <view class="solid-bottom text-xxl padding">
+        <text class="text-price text-red">{{item.price}}</text>
+      </view>
+    </view>
+  </view>
+
+</view>
+<view class="cu-list menu card-menu shadow-lg radius">
+  <!-- 评分
+  <view class="cu-item">
+    <view class="flex-sub text-center">
+      <view class="padding"><text class="text-black text-bold">您对这个单子满意吗</text></view>
+      <van-rate value="{{ value }}" size="{{ 25 }}" color="#ee0a24" void-color="#eee" void-icon="star"
+      bind:change="onChange" />
+    </view>
+  </view> -->
+
+  <!-- <view class="cu-item solids-bottom padding-xs flex align-center">
+    <view class="flex-sub text-center">
+      <view class="padding"><text class="text-black text-bold">拼车人均</text></view>
+      <view class="solid-bottom text-xxl padding">
+        <text class="text-price text-red">{{item.price}}</text>
+      </view>
+    </view>
+  </view> -->
+</view>
+<view class="cu-list menu card-menu shadow-lg radius" style="margin-bottom:100rpx">
+  <view class="flex-sub text-center">
+    <view class="solid-bottom text-sl padding">
+      <text class=" cuIcon-roundcheckfill text-green"></text>
+    </view>
+    <view class="padding">已完成</view>
+  </view>
+</view>
+
+<view class="flex flex-direction" style="position: fixed; bottom: 0rpx; width: 760rpx">
+  <button class="cu-btn bg-orange lg" style="height:120rpx">所有人已上车 >>> 行程开始</button>
+</view>

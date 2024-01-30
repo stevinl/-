@@ -1,0 +1,31 @@
+<view style="margin: 16px">我加入的行程</view>
+<view class="card" wx:for="{{dataList}}" wx:key="index" wx:for-item="item">
+  <view bindtap="doGrade" data-item="{{item}}">
+    <i-card full title="拼车" extra="" thumb="">
+    
+    <view slot="content">
+      <!-- <view class="cu-tag bg-red light">标签</view> -->
+      <view class="">
+        <i class="iconfont icon-shijianrili" style="font-size:24rpx;"></i> {{item.driverPublish.start_time}}
+      </view>
+      <view class="content-item">
+        <i class="iconfont icon-qidian" style="font-size:30rpx;color:#00cec9"></i> {{item.driverPublish.start_name}}
+      </view>
+      <view class="content-item">
+        <i class="iconfont icon-zhongdian" style="font-size:30rpx;color:#fdcb6e"></i><P> {{item.driverPublish.end_name}}</P>
+      </view>
+    </view>
+    <view slot="footer">
+
+      <block wx:if="{{item.join_status == 0}}">
+        <view class="cu-tag bg-red light">申请中</view>
+      </block>
+      <block wx:else>
+        <view class="cu-tag bg-{{item.driverPublish.finish_status ==0 ? 'green' : 'blue'}} light">{{item.driverPublish.finish_status==0 ? '已完成' : '进行中'}}</view>
+      </block>
+
+    </view>
+</i-card>
+  </view>
+  
+</view>

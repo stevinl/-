@@ -1,0 +1,12 @@
+/* pages/other/myPublish/myPublish.wxss */
+
+.card {
+
+  margin-top: 10rpx;
+  height: 340rpx;
+  overflow: hidden;
+}
+
+.content-item {
+  margin-top: 25rpx;
+}

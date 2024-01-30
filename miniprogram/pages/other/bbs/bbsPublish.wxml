@@ -1,0 +1,11 @@
+<!--pages/other/bbs/bbsPublish.wxml-->
+<!-- !!!!! placeholder 在ios表现有偏移 建议使用 第一种样式 -->
+<view class="cu-form-group margin-top">
+  <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="多行文本输入框"></textarea>
+</view>
+
+
+<view class="footer" style="bottom:{{footerBottom}}px">
+  <text class="words-num">{{wordsNum}}</text>
+  <button class="send-btn" bind:tap="send">发布</button>
+</view>

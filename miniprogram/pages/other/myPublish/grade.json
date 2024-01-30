@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-rate": "@vant/weapp/rate/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "tripmsg":"../../../components/tripMsg2/tripMsg"
+  },
+  "navigationBarTitleText": "我发布的行程"
+}

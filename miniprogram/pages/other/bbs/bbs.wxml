@@ -1,0 +1,64 @@
+<!--pages/other/bbs/bbs.wxml-->
+<wxs module="util" src='../../../utils/util.wxs'></wxs>
+<view class="container">
+  <content-title name="拼车" describe="BBS" blogtype="{{blogtype}}">
+
+    <content-card name="欢迎━(*｀∀´*)ノ亻!">
+      <l-sticky scrollTop="{{scrollTop}}" mode="css">
+
+        <l-sticky-item l-header-sticky-class="l-header-sticky-class">
+
+          <view slot="header" class="container-search-bar" style="height:80rpx">
+            <!-- <search-bar style="width:100%" l-container-class="l-container-class" /> -->
+            <van-search style="width: 720rpx"value="{{ value }}" placeholder="请输入搜索关键词" show-action bind:search="onSearch"
+              bind:cancel="onCancel" bind:change="onChange"/>
+          </view>
+
+          <view slot="body" class="view-container">
+
+            <l-sticky scrollTop="{{scrollTop}}" mode="css">
+              <l-sticky-item top="80" l-header-sticky-class="l-header-sticky-class">
+                <l-segment style="background-color:white" slot="header" active-key="one" bind:linchange="tabchange">
+                  <!-- <l-segment-item tab="找司机" key="one" dot-badge="{{true}}" /> -->
+                  <l-segment-item tab="bbs" key="one" badge-count="95" l-class-badge="badge-view" />
+                </l-segment>
+
+                <block wx:for="{{blogList}}" wx:key="bbs_id" wx:for-item="item">
+                  <view style="margin-top:30rpx" slot="body" data-item="{{item}}" bindtap="lookBlogDetail">
+                    <l-card type="avatar" l-class="card" image="{{item.User.avatar_url}}"
+                      title="{{item.User.nick_name}}" describe="{{util.getDateDiff(item.created_at)}}">
+                      <view class="avter-content">
+                        {{item.content}}
+                      </view>
+                      <view class="avter-share-container">
+                        <view class="like-container">
+                          <!-- <l-icon name="like" color="#666" size="28" /> -->
+                          <text class="cuIcon-appreciatefill margin-lr-xs text-pink"></text>{{item.like_count}}
+                          <!-- <view class="number"></view> -->
+                        </view>
+                        <!-- <view class="like-container">
+                          <l-icon name="default" color="#666" size="28" />
+                          <view class="number">10评论</view>
+                        </view> -->
+                      </view>
+                    </l-card>
+
+                  </view>
+                </block>
+
+              </l-sticky-item>
+            </l-sticky>
+
+
+          </view>
+
+
+        </l-sticky-item>
+
+      </l-sticky>
+
+    </content-card>
+  </content-title>
+
+
+</view>

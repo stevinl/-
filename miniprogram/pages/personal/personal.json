@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "rowImg": "../../components/rowImg/rowImg"
+  },
+  "navigationStyle": "custom"
+}

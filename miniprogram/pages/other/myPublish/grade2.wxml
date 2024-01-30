@@ -1,0 +1,109 @@
+<wxs src="../../../utils/util.wxs" module="util" />
+<view class="cu-card case ">
+  <view class="cu-item shadow">
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="content flex-sub">
+          <view class="text-grey"> {{first_name}}师傅 
+            <view class="text-grey content-item-first">29 单</view>
+            <view class="cuIcon-favor lg text-yellow content-item-second"> 4.9</view>
+          </view>
+
+
+          <view class="text-gray text-sm flex justify-between">
+            {{util.formatTime(item.join_time, "Y-M-D h:m:s")}}
+            <!-- <view class="text-gray text-sm">
+              <text class="cuIcon-attentionfill margin-lr-xs"></text> 10
+              <text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
+              <text class="cuIcon-messagefill margin-lr-xs"></text> 30
+            </view> -->
+          </view>
+        </view>
+        <view class="cu-avatar round lg" style="background-image:url({{item.driverPublish.User.avatar_url}});"></view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="cu-list menu card-menu shadow-lg radius">
+
+  <view class="cu-item solids-bottom padding-xs flex align-center">
+    <view class="flex-sub text-center">
+
+      <view class="padding"><text class="text-black text-bold">金额/人 </text></view>
+      <view class="solid-bottom text-xxl padding">
+        <text class="text-price text-red">{{item.driverPublish.price}}</text>
+      </view>
+    </view>
+  </view>
+
+  <block wx:if="{{item.driverPublish.finish_status == 0}}">
+
+    <view class="cu-item" style="height: 300rpx">
+
+
+      <block wx:if="{{!isscore}}">
+        <view class="flex-sub text-center">
+          <view class="padding"><text class="text-black text-bold">评价 </text>
+            <view class="cu-tag"> 匿名 </view>
+          </view>
+          <van-rate value="{{ score_value }}" size="{{ 40}}" color="#ee0a24" void-color="#eee" void-icon="star"
+            bind:change="onChange" />
+
+        </view>
+
+      </block>
+
+      <block wx:else>
+        <view class="flex-sub text-center">
+          <view class="padding"><text class="text-black text-bold">你已评分</text></view>
+          <van-rate readonly value="{{ item.score }}" size="{{ 25 }}" color="#ee0a24" void-color="#eee"
+            void-icon="star" />
+        </view>
+      </block>
+
+
+
+
+    </view>
+    <view class="flex flex-direction">
+      <block wx:if="{{!isscore}}">
+        <button class="cu-btn bg-{{ btncolor== true ? 'black' : 'grey'}}  margin-tb-sm lg"
+          bindtap="GiveEvaluate">匿名评价</button>
+      </block>
+
+    </view>
+
+    <view class="flex-sub text-center">
+      <view class="cu-tag xl bg-green light">此行程已完成</view>
+    </view>
+  </block>
+
+
+  <block wx:else>
+    <view class="flex-sub text-center" wx:if="{{item.join_status == 0}}">
+      <view class="cu-tag bg-yellow light">您处于申请阶段 请等待发布者同意</view>
+    </view>
+    <view class="flex-sub text-center" wx:else>
+      <view class="cu-tag bg-green light">此行程仍在进行中</view>
+    </view>
+
+  </block>
+
+  <!-- <block wx:if="{{!item.score}}">
+    <view class="cu-item">
+      <view class="flex-sub text-center">
+        <button class="cu-btn bg-green margin-tb-sm lg" bindtap="evaluate">匿名评价</button>
+      </view>
+    </view>
+  </block> -->
+
+
+</view>
+<!-- <view class="cu-list menu card-menu shadow-lg radius">
+  <view class="flex-sub text-center">
+      <view class="solid-bottom text-sl padding">
+        <text class=" cuIcon-roundcheckfill text-green"></text>
+      </view>
+      <view class="padding">已完成</view>
+    </view>
+</view> -->

@@ -1,0 +1,106 @@
+<wxs src="../../utils/util.wxs" module="util" />
+<van-notice-bar left-icon="volume-o" text="STUcarpool" />
+<view>
+  <!-- <van-search value="{{ value }}" shape="round" background="#4fc08d" placeholder="请输入搜索关键词" show-action
+      bind:search="onSearch" bind:cancel="onCancel" /> -->
+  <!-- <view class="cu-bar bg-white">
+      <view class="action">
+        <text class="cuIcon-title text-pink"></text> 全屏限高轮播
+      </view>
+      <view class="action">
+        <switch class="sm" bindchange="DotStyle"></switch>
+      </view>
+    </view> -->
+  <swiper class="screen-swiper square-dot swiper-size swiper-image" indicator-dots="true" circular="true"
+    autoplay="true" interval="5000" duration="500">
+    <swiper-item class="swiper-image" wx:for="{{swiperList}}" wx:key="index">
+
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"
+        wx:if="{{item.type=='video'}}"></video>
+    </swiper-item>
+  </swiper>
+
+
+  <view class="padding text-center">
+    <view class="radius shadow-warp cu-list grid col-{{gridCol}}">
+      <view class="cu-item" wx:for="{{iconList}}" wx:key="index" wx:if="{{index<gridCol*2}}">
+        <navigator url="{{item.url}}">
+
+          <view class="cuIcon-{{item.icon}} text-{{item.color}}">
+            <view class="cu-tag badge" wx:if="{{item.badge!=0}}">
+              <block wx:if="{{item.badge!=1}}">{{item.badge>99?"99+":item.badge}}</block>
+            </view>
+          </view>
+
+          <text>{{item.name}}</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="padding">
+    <block wx:if="{{startitem.length != 0}}">
+      <view class="radius shadow-warp bg-white margin-top">
+        <i-card title="最近日程" extra="出行：{{util.formatTime(startitem[0].driverPublish.start_time, 'M-D h:m')}}" thumb="">
+          <view slot="content">
+            <view class="cu-capsule radius" style="margin-top:10rpx">
+              <!-- {{util.formatTime(startitem[0].driverPublish.start_time, 'M-D h:m')}} -->
+              <view class="cu-tag bg-cyan">出发倒计时</view>
+              <view class="cu-tag line-cyan">
+                <van-count-down time="{{util.getDateDiff3(startitem[0].driverPublish.start_time)}}" />
+              </view>
+            </view>
+            <view class="margin-top">
+              <view class="content-item">
+                <i class="iconfont icon-qidian" style="font-size:30rpx;color:#00cec9"></i>
+                {{startitem[0].driverPublish.start_name}}
+              </view>
+              <view class="content-item">
+                <i class="iconfont icon-zhongdian" style="font-size:30rpx;color:#fdcb6e"></i>
+                <P> {{startitem[0].driverPublish.end_name}}</P>
+              </view>
+            </view>
+
+          </view>
+          <view slot="footer">
+
+
+          </view>
+        </i-card>
+      </view>
+    </block>
+
+    <block wx:else>
+      <view class="radius shadow-warp bg-white margin-top">
+        <i-card title="最近日程" extra="没有日程" thumb="">
+          <view slot="content">
+            暂无日程
+          </view>
+          <view slot="footer">
+
+
+          </view>
+        </i-card>
+      </view>
+    </block>
+
+  </view>
+  <!-- <view class="padding">
+      <view class="padding-xl radius shadow-warp bg-white margin-top">
+        <view class="content">
+          <view class="cu-capsule radius">
+            <view class="cu-tag bg-cyan">上午</view>
+            <view class="cu-tag line-cyan">10:00</view>
+          </view>
+          <view class="margin-top">这是第一次，我家的铲屎官走了这么久。久到足足有三天！！ 在听到他的脚步声响在楼梯间的那一刻，我简直想要破门而出，对着他狠狠地吼上10分钟，然后再看心情要不要他进门。
+          </view>
+        </view>
+      </view>
+    </view> -->
+
+
+
+
+</view>

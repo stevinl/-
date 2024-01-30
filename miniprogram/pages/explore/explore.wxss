@@ -1,0 +1,8 @@
+.swiper-size {
+  padding: 0 30rpx;
+  border-radius: 15rpx;
+}
+.swiper-image {
+  border-radius: 15rpx;
+}
+

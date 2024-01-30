@@ -1,0 +1,7 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "tripmsg":"../../components/tripMsg/tripMsg",
+    "van-search": "@vant/weapp/search/index"
+  }
+}

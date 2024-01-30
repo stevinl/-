@@ -1,0 +1,18 @@
+/* pages/search/search.wxss */
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+#top-bar {
+  width: 100%;
+  height: 80rpx;
+  padding: 20rpx;
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #fff;
+  background-color: #00b26a;
+}

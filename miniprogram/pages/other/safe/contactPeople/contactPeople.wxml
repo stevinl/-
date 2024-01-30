@@ -1,0 +1,44 @@
+<!--miniprogram/pages/other/safe/contactPeople/contactPeople.wxml-->
+<view>
+  <view class="cu-bar bg-white solid-bottom margin-top" style="">
+    <view class="action">
+      <text class="cuIcon-title text-orange "></text> 联系人列表
+    </view>
+    <view class="action">
+      <button class="cu-btn shadow" bindtap="toAddcontactPeople">新增</button>
+    </view>
+  </view>
+  <!-- 有联系人 -->
+  <block wx:if="{{contact_peoplelist}}">
+    <van-swipe-cell id="swipe-cell" right-width="{{ 65 }}" async-close bind:close="onClose"
+      wx:for="{{contact_peoplelist}}" wx:key="id" data-id="{{item.id}}">
+
+        <!-- <view slot="left">选择</view> -->
+        <view class="cu-list menu " style="margin-top: 3rpx">
+          <view class="cu-item">
+            <view class="content">
+              <view class="text-grey">
+                <text class="text-abc"></text>{{item.phone_num}}</view>
+              <view class="text-gray text-sm">
+                {{item.name}}
+              </view>
+            </view>
+            <!-- <button class="cu-btn bg-black shadow sm" bindtap="showModal">设置</button> -->
+          </view>
+        </view>
+        <view slot="right" class="van-swipe-cell__right" >
+          <button class="cu-btn bg-red lg" style="height:96rpx;">删除</button>
+        </view>
+
+
+    </van-swipe-cell>
+
+
+  </block>
+
+
+  <!-- 无联系人 -->
+  <block wx:else>
+    <van-empty description="描述文字" />
+  </block>
+</view>

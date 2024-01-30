@@ -1,0 +1,62 @@
+<wxs module="util" src='../../utils/util.wxs'></wxs>
+<view class="" wx:for="{{historyList}}" wx:key="id" wx:for-item="List">
+
+  <block wx:if="{{List.driverPublishParticipators.length >= 0}}">
+
+    <view class="cu-item shadow-warp" style="margin-top:15rpx">
+      <!-- <view class="shadow-blur content"> -->
+
+      <view class="cu-list menu-avatar radius">
+        <view class="cu-item" style="justify-content:center;height:63rpx">
+          <text class="cuIcon-time lg text-yellow">发布时间：{{util.getDateDiff(List.created_at)}}</text>
+          <text class="cuIcon-timefill lg text-orange">出发时间：{{util.formatTime(List.start_time,'M-D h:m')}}
+          </text>
+        </view>
+        <view class="cu-item" style="justify-content:center;height:63rpx">
+          <text class="cuIcon-location lg text-blue">始发点：{{List.start_name}}</text>
+        </view>
+        <view class="cu-item" style="justify-content:center;height:63rpx">
+          <text class="cuIcon-location lg text-green">终点：{{List.end_name}}</text>
+        </view>
+
+        <!-- 有参与者 -->
+        <block wx:if="{{List.driverPublishParticipators.length > 0}}">
+          <view class="cu-item" wx:for="{{List.driverPublishParticipators}}" wx:for-item="item" wx:key="id">
+
+            <view class="cu-avatar round lg" style="background-image:url({{item.User.avatar_url}});"></view>
+            <view class="content">
+              <view class="text-grey">{{item.User.nick_name}}</view>
+              <view class="text-green text-sm">
+                <text class="cuIcon-infofill text-red"></text>
+              </view>
+            </view>
+            <view class="action">
+              <view class="text-yellow text-xs">{{util.getDateDiff(item.join_time)}}</view>
+            </view>
+            <view>
+              <block wx:if="{{item.join_status == 0}}">
+                <view class="cu-tag bg-red light" bindtap="toAgree" data-participator="{{item.id}}">待同意</view>
+              </block>
+              <block wx:else>
+                <view class="cu-tag bg-green light" bindtap="cancleAgree" data-participator="{{item.id}}">已同意</view>
+              </block>
+            </view>
+          </view>
+        </block>
+
+
+        <!-- 参与者为空 -->
+
+        <block wx:else>
+          <view class="cu-item" style="height:100%; justify-content:center;padding:0">
+            <van-empty class="custom-image" image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+            description="暂无申请信息" />
+          </view>
+
+        </block>
+      </view>
+    </view>
+
+
+  </block>
+</view>

@@ -1,0 +1,16 @@
+<!--miniprogram/pages/notification/notification.wxml-->
+<view class="cu-list menu">
+  <view class="cu-item arrow">
+    <navigator class="content" hover-class="none" url="../driverPublishConfirm/confirm" open-type="redirect">
+      <text class="cuIcon-discoverfill text-orange"></text>
+      <text class="text-grey">申请通知</text>
+    </navigator>
+  </view>
+
+  <view class="cu-item arrow">
+    <navigator class="content" hover-class="none" url="../commentConfirm/commentConfirm" open-type="redirect">
+      <text class="cuIcon-discoverfill text-orange"></text>
+      <text class="text-grey">系统通知</text>
+    </navigator>
+  </view>
+</view>
